@@ -25,5 +25,5 @@ public:
     void zlozZamowienie(int id_klienta, Zamowienie z);
     void zmienStatusZamowienia(int id_admina, int id_zamowienia, string status); 
     Rezerwacja zarezerwujProdukt(int id_klienta, Produkt p);
-}
+};
 #endif
