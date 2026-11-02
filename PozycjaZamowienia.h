@@ -12,7 +12,8 @@ private:
     double cenaJednostkowa;
 
 public:
-    
+    double pobierzCene();
+    int pobierzIlosc();
 };
 
 #endif
