@@ -13,10 +13,9 @@ protected:
     string email;
 
 public:
-    // Wirtualny destruktor - dobra praktyka dla klas bazowych (z których się dziedziczy)
     virtual ~Uzytkownik() = default;
     
-    // Tu w przyszłości dodasz konstruktor i metody dostępowe
+    
 };
 
-#endif // UZYTKOWNIK_H
+#endif
