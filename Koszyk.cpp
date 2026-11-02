@@ -10,7 +10,7 @@ void Koszyk::dodajDoKoszyka(Produkt p) {
 
 void Koszyk::usunZKoszyka(Produkt p) {
     if (produktyWKoszyku.empty()) {
-        cout << "Koszyk jest pusty! Nie mozna nic usunac." << endl;
+        cout << "Koszyk jest pusty. Nie mozna nic usunac." << endl;
         return;
     }
     
