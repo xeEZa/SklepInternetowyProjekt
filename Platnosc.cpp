@@ -25,3 +25,13 @@ bool Platnosc::zrealizujPlatnosc() {
     
     return true;
 }
+
+int Platnosc::pobierzIdPlatnosci() const{
+    return idPlatnosci;
+}
+bool Platnosc::CzyOplacone() const {
+    return czyOplacone;
+}
+double Platnosc::pobierzKwote() const {
+    return kwota;
+} 

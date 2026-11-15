@@ -14,6 +14,9 @@ private:
 
 public:
     bool zrealizujPlatnosc();
+    double pobierzKwote() const;
+    bool CzyOplacone() const;
+    int pobierzIdPlatnosci() const;
 };
 
 #endif
