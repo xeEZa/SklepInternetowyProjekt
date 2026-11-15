@@ -20,6 +20,12 @@ private:
     vector<Rezerwacja> aktywneRezerwacje; 
 
 public:
+    SystemSklepu();
+    SystemSklepu(vector<Klient> klienci, vector<Produkt> produkty, vector<Zamowienie> zamowienia, vector<Rezerwacja> rezerwacje);
+    vector<Klient> pobierzListeKlientow() const;
+    vector<Produkt> pobierzKatalogProduktow() const;
+    vector<Zamowienie> pobierzListeZamowien() const;
+    vector<Rezerwacja> pobierzAktywneRezerwacje() const;
     vector<Produkt> wyszukajProdukt(string fraza, string kategoria, string marka);  
     void dodajProdukt(int id_admina, Produkt p); 
     void zlozZamowienie(int id_klienta, Zamowienie z);
