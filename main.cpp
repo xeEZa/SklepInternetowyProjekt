@@ -1,5 +1,5 @@
 #include <iostream>
-#include "SystemSklepu.h" // Główna klasa zarządzająca
+#include "SystemSklepu.h"
 #include "Produkt.h"
 #include "Klient.h"
 
