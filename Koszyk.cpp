@@ -14,10 +14,14 @@ void Koszyk::usunZKoszyka(Produkt p) {
         return;
     }
     
-    produktyWKoszyku.pop_back(); 
-    cout << "Usunieto produkt z koszyka." << endl;
+    for (auto it = produktyWKoszyku.begin(); it != produktyWKoszyku.end(); ++it) {
+        if (it->pobierzId() == p.pobierzId()) {
+            produktyWKoszyku.erase(it);
+            cout << "Usunieto produkt z koszyka." << endl;
+            return;
+        }
+    }
 }
-
 void Koszyk::wyczyscKoszyk() {
     produktyWKoszyku.clear();
     wartoscKoszyka = 0.0;
