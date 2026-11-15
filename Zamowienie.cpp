@@ -37,3 +37,39 @@ void Zamowienie::aktualizujStatus(string nowyStatus) {
         cout << "Blad: Nierozpoznany status '" << nowyStatus << "'. Aktualizacja przerwana." << endl;
     }
 }
+
+int Zamowienie::pobierzId() const {
+    return idZamowienia;
+}
+
+string Zamowienie::pobierzDateZlozenia() const {
+    return dataZlozenia;
+}
+
+string Zamowienie::pobierzStatus() const {
+    return status;
+}
+
+vector<PozycjaZamowienia> Zamowienie::pobierzPozycje() const {
+    return pozycje;
+}
+
+Platnosc& Zamowienie::pobierzPlatnosc() {
+    return platnosc;
+}
+
+void Zamowienie::ustawId(int id) {
+    idZamowienia = id;
+}
+
+void Zamowienie::ustawDateZlozenia(string data) {
+    dataZlozenia = data;
+}
+
+void Zamowienie::dodajPozycje(PozycjaZamowienia pozycja) {
+    pozycje.push_back(pozycja);
+}
+
+void Zamowienie::ustawPlatnosc(Platnosc nowaPlatnosc) {
+    platnosc = nowaPlatnosc;
+}
