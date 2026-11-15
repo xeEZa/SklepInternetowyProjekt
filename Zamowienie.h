@@ -19,7 +19,6 @@ private:
 public:
     Zamowienie();
     Zamowienie(int idZamowienia, string dataZlozenia, vector<PozycjaZamowienia> pozycje, Platnosc platnosc, string status = "Nowe");
-
     double obliczKwote();
     void aktualizujStatus(string nowyStatus);
 
