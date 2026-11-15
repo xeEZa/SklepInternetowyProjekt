@@ -3,7 +3,7 @@
 
 using namespace std;
 Zamowienie::Zamowienie() : idZamowienia(0), dataZlozenia(""), status("Nowe"), pozycje(), platnosc() {}
-Zamowienie::Zamowienie(int idZamowienia, string dataZlozenia, string status, vector<PozycjaZamowienia> pozycje, Platnosc platnosc, string status)
+Zamowienie::Zamowienie(int idZamowienia, string dataZlozenia, vector<PozycjaZamowienia> pozycje, Platnosc platnosc, string status)
     : idZamowienia(idZamowienia), dataZlozenia(dataZlozenia), status(status), pozycje(pozycje), platnosc(platnosc) {}
 
 double Zamowienie::obliczKwote() {

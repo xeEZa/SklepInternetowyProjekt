@@ -14,7 +14,6 @@ private:
 public:
     PozycjaZamowienia();
     PozycjaZamowienia(Produkt produkt, int ilosc, double cenaJednostkowa);
-
     Produkt pobierzProdukt() const; 
     double pobierzCene() const;
     int pobierzIlosc() const;
