@@ -12,8 +12,12 @@ private:
     double wartoscKoszyka;
 
 public:
-    void dodajDoKoszyka(Produkt p);
-    void usunZKoszyka(Produkt p);
+    Koszyk();
+    ~Koszyk();
+    double pobierzWartoscKoszyka() const;
+    vector<Produkt> pobierzProduktyWKoszyku() const;
+    void dodajDoKoszyka(const Produkt& p);
+    void usunZKoszyka(const Produkt& p);
     void wyczyscKoszyk();
 };
 

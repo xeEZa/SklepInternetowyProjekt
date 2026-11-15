@@ -16,6 +16,7 @@ void Koszyk::usunZKoszyka(const Produkt& p) {
     
     for (auto it = produktyWKoszyku.begin(); it != produktyWKoszyku.end(); ++it) {
         if (it->pobierzId() == p.pobierzId()) {
+            wartoscKoszyka -= it->pobierzCene();
             produktyWKoszyku.erase(it);
             cout << "Usunieto produkt z koszyka." << endl;
             return;
@@ -26,4 +27,21 @@ void Koszyk::wyczyscKoszyk() {
     produktyWKoszyku.clear();
     wartoscKoszyka = 0.0;
     cout << "Koszyk zostal wyczyszczony." << endl;
+}
+double Koszyk::pobierzWartoscKoszyka() const {
+    double suma = 0.0;
+    for (const auto& produkt : produktyWKoszyku) {
+        suma += produkt.pobierzCene();
+    }
+    return suma;
+}
+
+vector<Produkt> Koszyk::pobierzProduktyWKoszyku() const {
+    return produktyWKoszyku;
+}
+
+Koszyk::Koszyk() : wartoscKoszyka(0.0) {}
+
+Koszyk::~Koszyk() {
+    produktyWKoszyku.clear();
 }
