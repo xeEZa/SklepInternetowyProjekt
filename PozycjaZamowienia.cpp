@@ -1,11 +1,27 @@
 #include "PozycjaZamowienia.h"
 #include <iostream>
 
-using namespace std;
+PozycjaZamowienia::PozycjaZamowienia()
+    : produkt(), ilosc(0), cenaJednostkowa(0.0) {}
+
+PozycjaZamowienia::PozycjaZamowienia(Produkt produkt, int ilosc, double cenaJednostkowa)
+    : produkt(produkt), ilosc(ilosc), cenaJednostkowa(cenaJednostkowa) {}
+
+Produkt PozycjaZamowienia::pobierzProdukt() const {
+    return produkt;
+}
+
 double PozycjaZamowienia::pobierzCene() {
     return cenaJednostkowa;
 }
 
 int PozycjaZamowienia::pobierzIlosc() {
     return ilosc;
+}
+
+void PozycjaZamowienia::zwiekszIlosc(int dodatkowaIlosc) {
+    if (dodatkowaIlosc > 0) {
+        ilosc += dodatkowaIlosc;
+    }
+    
 }
