@@ -12,8 +12,13 @@ private:
     double cenaJednostkowa;
 
 public:
-    double pobierzCene();
-    int pobierzIlosc();
+    PozycjaZamowienia();
+    PozycjaZamowienia(Produkt produkt, int ilosc, double cenaJednostkowa);
+
+    Produkt pobierzProdukt() const; 
+    double pobierzCene() const;
+    int pobierzIlosc() const;
+    void zwiekszIlosc(int dodatkowaIlosc);
 };
 
 #endif
