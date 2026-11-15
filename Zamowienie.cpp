@@ -2,7 +2,9 @@
 #include <iostream>
 
 using namespace std;
-
+Zamowienie::Zamowienie() : idZamowienia(0), dataZlozenia(""), status("Nowe") {}
+Zamowienie::Zamowienie(int idZamowienia, string dataZlozenia, string status)
+    : idZamowienia(idZamowienia), dataZlozenia(dataZlozenia), status(status) {}
 
 double Zamowienie::obliczKwote() {
     double suma = 0.0;
