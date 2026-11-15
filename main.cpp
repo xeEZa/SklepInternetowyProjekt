@@ -8,5 +8,4 @@ using namespace std;
 int main() {
     
     SystemSklepu sklep;
-    cout<<"test";
 }
