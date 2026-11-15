@@ -3,6 +3,12 @@
 
 using namespace std;
 
+Platnosc::Platnosc()
+    : idPlatnosci(0), metodaPlatnosci(""), kwota(0.0), czyOplacone(false) {}
+
+Platnosc::Platnosc(int idPlatnosci, string metodaPlatnosci, double kwota, bool czyOplacone)
+    : idPlatnosci(idPlatnosci), metodaPlatnosci(metodaPlatnosci), kwota(kwota), czyOplacone(czyOplacone) {}
+
 bool Platnosc::zrealizujPlatnosc() {
     
     if (czyOplacone) {
@@ -35,3 +41,14 @@ bool Platnosc::CzyOplacone() const {
 double Platnosc::pobierzKwote() const {
     return kwota;
 } 
+string Platnosc::pobierzMetodePlatnosci() const {
+    return metodaPlatnosci;
+}
+
+void Platnosc::ustawMetodePlatnosci(string metoda) {
+    metodaPlatnosci = metoda;
+}
+
+void Platnosc::ustawKwote(double nowaKwota) {
+    kwota = nowaKwota;
+}
