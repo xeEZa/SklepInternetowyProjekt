@@ -13,7 +13,12 @@ private:
     string adresDostawy;
     
 public:
-    
+    Klient();
+    Klient(int id, string imie, string nazwisko, string email, string adresDostawy);
+    virtual ~Klient() = default;
+
+    Koszyk& pobierzKoszyk();
+    string pobierzAdresDostawy() const;
 };
 
 #endif

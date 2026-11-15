@@ -3,12 +3,12 @@
 
 using namespace std;
 
-void Koszyk::dodajDoKoszyka(Produkt p) {
+void Koszyk::dodajDoKoszyka(const Produkt& p) {
     produktyWKoszyku.push_back(p);
     cout << "Produkt zostal dodany do koszyka." << endl;
 }
 
-void Koszyk::usunZKoszyka(Produkt p) {
+void Koszyk::usunZKoszyka(const Produkt& p) {
     if (produktyWKoszyku.empty()) {
         cout << "Koszyk jest pusty. Nie mozna nic usunac." << endl;
         return;
