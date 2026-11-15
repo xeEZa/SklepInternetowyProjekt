@@ -11,11 +11,11 @@ Produkt PozycjaZamowienia::pobierzProdukt() const {
     return produkt;
 }
 
-double PozycjaZamowienia::pobierzCene() {
+double PozycjaZamowienia::pobierzCene() const {
     return cenaJednostkowa;
 }
 
-int PozycjaZamowienia::pobierzIlosc() {
+int PozycjaZamowienia::pobierzIlosc() const {
     return ilosc;
 }
 
