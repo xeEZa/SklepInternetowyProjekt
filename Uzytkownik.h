@@ -13,7 +13,14 @@ protected:
     string email;
 
 public:
+    Uzytkownik();
+    Uzytkownik(int id, string imie, string nazwisko, string email);
     virtual ~Uzytkownik() = default;
+
+    int pobierzID() const;
+    string pobierzImie() const;
+    string pobierzNazwisko() const;
+    string pobierzEmail() const;
     
     
 };
