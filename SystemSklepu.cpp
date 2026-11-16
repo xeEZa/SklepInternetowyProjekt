@@ -90,18 +90,7 @@ void SystemSklepu::zmienStatusZamowienia(int id_admina, int id_zamowienia, strin
 }
 
 Rezerwacja SystemSklepu::zarezerwujProdukt(int id_klienta, Produkt& p, string dataUtworzenia, string czasWygasniecia) {
-    bool znalezionoKlienta = false;
-    for (const auto& klient : listaKlientow) {
-        if (klient.pobierzID() == id_klienta) {
-            znalezionoKlienta = true;
-            break;
-        }
-    }
     
-    if (!znalezionoKlienta) {
-        cout << "[BLAD] Klient o ID " << id_klienta << " nie istnieje. Rezerwacja odrzucona." << endl;
-        return Rezerwacja();
-    }
     int noweId = aktywneRezerwacje.size() + 1;
     double oplata = p.pobierzCene() * 0.10;
     
@@ -114,23 +103,28 @@ Rezerwacja SystemSklepu::zarezerwujProdukt(int id_klienta, Produkt& p, string da
          
     return nowaRezerwacja;
 }
-
-void SystemSklepu::rejestrujKlienta(const Klient& k) {
-    listaKlientow.push_back(k);
-    cout << "[LOG] Zarejestrowano nowego klienta: " << k.pobierzImie() << " " << k.pobierzNazwisko() << endl;
-}
-
 void SystemSklepu::wyswietlKatalog() const {
     cout << "\n--- KATALOG PRODUKTOW ---" << endl;
     if (katalogProduktow.empty()) {
         cout << "Katalog jest pusty." << endl;
         return;
     }
-    
     for (const auto& p : katalogProduktow) {
         cout << "ID: " << p.pobierzId() 
              << " | " << p.pobierzNazwe() 
              << " | Cena: " << p.pobierzCene() << " PLN "
              << "| Dostepny: " << (p.pobierzDostepnosc() ? "Tak" : "Nie") << endl;
     }
+}
+void SystemSklepu::rejestrujKlienta(const Klient& k) {
+    listaKlientow.push_back(k);
+    cout << "[LOG] Zarejestrowano nowego klienta: " << k.pobierzImie() << " " << k.pobierzNazwisko() << endl;
+}
+Klient& SystemSklepu::pobierzKlientaPoId(int id_klienta) {
+    for (auto& klient : listaKlientow) {
+        if (klient.pobierzID() == id_klienta) {
+            return klient;
+        }
+    }
+    throw invalid_argument("Klient o podanym ID nie istnieje!");
 }

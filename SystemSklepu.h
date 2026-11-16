@@ -33,5 +33,6 @@ public:
     Rezerwacja zarezerwujProdukt(int id_klienta, Produkt& p, string dataUtworzenia, string czasWygasniecia);
     void rejestrujKlienta(const Klient& k);
     void wyswietlKatalog() const;
+    Klient& pobierzKlientaPoId(int id_klienta);
 };
 #endif
