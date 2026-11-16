@@ -30,7 +30,7 @@ public:
     void dodajProdukt(int id_admina, Produkt& p); 
     void zlozZamowienie(int id_klienta, Zamowienie& z);
     void zmienStatusZamowienia(int id_admina, int id_zamowienia, string status); 
-    Rezerwacja zarezerwujProdukt(int id_klienta, Produkt& p, string dataUtworzenia, string czasWygasniecia);
+    Rezerwacja zarezerwujProdukt(int id_klienta,const Produkt& p, string dataUtworzenia, string czasWygasniecia);
     void rejestrujKlienta(const Klient& k);
     void wyswietlKatalog() const;
     Klient& pobierzKlientaPoId(int id_klienta);

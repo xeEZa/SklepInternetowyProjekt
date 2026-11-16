@@ -89,7 +89,7 @@ void SystemSklepu::zmienStatusZamowienia(int id_admina, int id_zamowienia, strin
     }
 }
 
-Rezerwacja SystemSklepu::zarezerwujProdukt(int id_klienta, Produkt& p, string dataUtworzenia, string czasWygasniecia) {
+Rezerwacja SystemSklepu::zarezerwujProdukt(int id_klienta, const Produkt& p, string dataUtworzenia, string czasWygasniecia) {
     
     int noweId = aktywneRezerwacje.size() + 1;
     double oplata = p.pobierzCene() * 0.10;

@@ -160,7 +160,7 @@ int main() {
                     Klient& k = sklep.pobierzKlientaPoId(idZalogowanego);
                     vector<Produkt> wKoszyku = k.pobierzKoszyk().pobierzProduktyWKoszyku();
                     if(wKoszyku.empty()) { cout << "[BLAD] Koszyk pusty." << endl; break; }
-                    
+
                     vector<PozycjaZamowienia> pozycje;
                     for(const auto& prod : wKoszyku) pozycje.push_back(PozycjaZamowienia(prod, 1, prod.pobierzCene()));
 
@@ -189,19 +189,7 @@ int main() {
                 sklep.zmienStatusZamowienia(ID_ADMINA, idz, nowyStatus);
                 break;
             }
-            case 9: {
-                vector<Produkt> kat = sklep.pobierzKatalogProduktow();
-                string dataUtworzenia;
-                string czasWygasniecia;
-                cout << "Podaj date utworzenia rezerwacji (YYYY-MM-DD): ";
-                cin >> dataUtworzenia;
-                cout << "Podaj czas wygasniecia rezerwacji (YYYY-MM-DD): ";
-                cin >> czasWygasniecia;
-                if(!kat.empty()) {
-                    sklep.zarezerwujProdukt(idZalogowanego, kat.back(), dataUtworzenia, czasWygasniecia);
-                }
-                break;
-            }
+            
             case 10: {
                 cout << "\n--- STATYSTYKI BAZY ---" << endl;
                 cout << "Klienci: " << sklep.pobierzListeKlientow().size() << endl;
