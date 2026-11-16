@@ -20,10 +20,15 @@ int main() {
     };
     
     vector<Produkt> poczatkowyAsortyment = {
-        Produkt(1, "Klawiatura", "Razer", "Akcesoria", 300.00, true),
-        Produkt(2, "Monitor", "LG", "Elektronika", 1200.00, true),
-        Produkt(3, "Myszka", "Logitech", "Akcesoria", 150.00, true)
-    };
+        Produkt(1, "Kurtka KPOP Demon Hunters", "Huntrix", "Kurtka", 30000.00, true),
+        Produkt(2, "Kukirin", "Saja Boys", "Hulajnogi", 1200.00, true),
+        Produkt(3, "Soda Pop T-Shirt", "Saja Boys", "Koszulki", 200.00, true),
+        Produkt(4, "Ramones", "Rick Owens", "Buty", 3000.00, true),
+        Produkt(5, "Gats Low", "Maison Margiela", "Buty", 2500.00, true),
+        Produkt(6, "Czarna suknya z cekinami", "NYA>_<", "Suknya", 750.00, true),
+        Produkt(7, "Krutkie skarpetki", "Bilip", "Skarpetki", 69.00, true),
+        Produkt(8, "garniEtur", "niE", "Garnitur", 1550.00, true),
+    }; 
 
     SystemSklepu sklep(bazaKlientow, poczatkowyAsortyment, vector<Zamowienie>(), vector<Rezerwacja>());
     
