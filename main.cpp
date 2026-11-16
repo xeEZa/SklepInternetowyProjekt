@@ -189,7 +189,42 @@ int main() {
                 sklep.zmienStatusZamowienia(ID_ADMINA, idz, nowyStatus);
                 break;
             }
-            
+            case 9: {
+                vector<Produkt> kat = sklep.pobierzKatalogProduktow();
+                string dataUtworzenia;
+                string czasWygasniecia;
+                cout << "Podaj date utworzenia rezerwacji (YYYY-MM-DD): ";
+                cin >> dataUtworzenia;
+                cout << "Podaj czas wygasniecia rezerwacji (YYYY-MM-DD): ";
+                cin >> czasWygasniecia;
+                if(kat.empty()) { 
+                    cout << "Katalog jest pusty. Nie mozna nic zarezerwowac." << endl; 
+                    break; 
+                }
+                
+                cout << "\n--- DOSTEPNE PRODUKTY DO REZERWACJI ---" << endl;
+                for (const auto& p : kat) {
+                    cout << "ID: " << p.pobierzId() << " | " << p.pobierzNazwe() << " | " << p.pobierzCene() << " PLN" << endl;
+                }
+                
+                cout << "Podaj ID produktu, ktory chcesz zarezerwowac: ";
+                int idWybrane; 
+                cin >> idWybrane;
+                
+                bool znaleziono = false;
+                for (const auto& p : kat) {
+                    if (p.pobierzId() == idWybrane) {
+                        sklep.zarezerwujProdukt(idZalogowanego, p, dataUtworzenia, czasWygasniecia);
+                        znaleziono = true;
+                        break;
+                    }
+                }
+                
+                if (!znaleziono) {
+                    cout << "[BLAD] Nie znaleziono produktu o ID: " << idWybrane << endl;
+                }
+                break;
+            }
             case 10: {
                 cout << "\n--- STATYSTYKI BAZY ---" << endl;
                 cout << "Klienci: " << sklep.pobierzListeKlientow().size() << endl;
