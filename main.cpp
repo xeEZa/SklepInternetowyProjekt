@@ -44,18 +44,18 @@ int main() {
         }
         
         cout << "=================================================" << endl;
-        cout << " [1] Wyswietl katalog (wyswietlKatalog)" << endl;
-        cout << " [2] Zarejestruj klienta (rejestrujKlienta)" << endl;
-        cout << " [3] Dodaj produkt [ADMIN] (dodajProdukt)" << endl;
-        cout << " [4] Wyszukaj produkt (wyszukajProdukt)" << endl;
+        cout << " [1] Wyswietl katalog" << endl;
+        cout << " [2] Zarejestruj klienta" << endl;
+        cout << " [3] Dodaj produkt [ADMIN]" << endl;
+        cout << " [4] Wyszukaj produkt" << endl;
         cout << "-------------------------------------------------" << endl;
-        cout << " [5] Dodaj wybrany produkt do Koszyka (dodajDoKoszyka)" << endl;
-        cout << " [6] Usun wybrany produkt z koszyka (usunZKoszyka)" << endl;
-        cout << " [7] Zloz zamowienie z koszyka i OPLAC (zlozZamowienie / zrealizujPlatnosc)" << endl;
+        cout << " [5] Dodaj wybrany produkt do Koszyka)" << endl;
+        cout << " [6] Usun wybrany produkt z koszyka" << endl;
+        cout << " [7] Zloz zamowienie z koszyka i OPLAC" << endl;
         cout << "-------------------------------------------------" << endl;
-        cout << " [8] Zmien status zamowienia [ADMIN] (zmienStatusZamowienia)" << endl;
-        cout << " [9] Zarezerwuj produkt (zarezerwujProdukt)" << endl;
-        cout << " [10] Podsumowanie systemu (Gettery pobierzListe...)" << endl;
+        cout << " [8] Zmien status zamowienia [ADMIN]" << endl;
+        cout << " [9] Zarezerwuj produkt " << endl;
+        cout << " [10] Podsumowanie systemu " << endl;
         cout << " [11] Wypisz wszystkich klientow i ich koszyki" << endl;
         cout << " [12] >>> ZALOGUJ SIE (Wybierz aktywnego klienta)" << endl;
         cout << " [0] Wyjscie" << endl;
