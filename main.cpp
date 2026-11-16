@@ -183,6 +183,12 @@ int main() {
             }
             case 9: {
                 vector<Produkt> kat = sklep.pobierzKatalogProduktow();
+                string dataUtworzenia;
+                string czasWygasniecia;
+                cout << "Podaj date utworzenia rezerwacji (YYYY-MM-DD): ";
+                cin >> dataUtworzenia;
+                cout << "Podaj czas wygasniecia rezerwacji (YYYY-MM-DD): ";
+                cin >> czasWygasniecia;
                 if(!kat.empty()) {
                     sklep.zarezerwujProdukt(idZalogowanego, kat.back(), "2026-11-16", "2026-11-17");
                 }
