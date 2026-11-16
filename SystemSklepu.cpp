@@ -114,3 +114,23 @@ Rezerwacja SystemSklepu::zarezerwujProdukt(int id_klienta, Produkt& p, string da
          
     return nowaRezerwacja;
 }
+
+void SystemSklepu::rejestrujKlienta(const Klient& k) {
+    listaKlientow.push_back(k);
+    cout << "[LOG] Zarejestrowano nowego klienta: " << k.pobierzImie() << " " << k.pobierzNazwisko() << endl;
+}
+
+void SystemSklepu::wyswietlKatalog() const {
+    cout << "\n--- KATALOG PRODUKTOW ---" << endl;
+    if (katalogProduktow.empty()) {
+        cout << "Katalog jest pusty." << endl;
+        return;
+    }
+    
+    for (const auto& p : katalogProduktow) {
+        cout << "ID: " << p.pobierzId() 
+             << " | " << p.pobierzNazwe() 
+             << " | Cena: " << p.pobierzCene() << " PLN "
+             << "| Dostepny: " << (p.pobierzDostepnosc() ? "Tak" : "Nie") << endl;
+    }
+}
