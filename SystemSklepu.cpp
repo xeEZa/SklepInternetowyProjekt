@@ -50,12 +50,23 @@ vector<Produkt> SystemSklepu::wyszukajProdukt(string fraza, string kategoria, st
     return znalezione;
 }
 
-void SystemSklepu::dodajProdukt(int id_admina, Produkt p) {
+void SystemSklepu::dodajProdukt(int id_admina, Produkt& p) {
     cout << "[LOG] Administrator (ID: " << id_admina << ") dodal nowy produkt: " << p.pobierzNazwe() << endl;
     katalogProduktow.push_back(p);
 }
 
-void SystemSklepu::zlozZamowienie(int id_klienta, Zamowienie z) {
+void SystemSklepu::zlozZamowienie(int id_klienta, Zamowienie& z) {
+    bool znalezionoKlienta = false;
+    for (const auto& klient : listaKlientow) {
+        if (klient.pobierzID() == id_klienta) {
+            znalezionoKlienta = true;
+            break;
+        }
+    }
+    if (!znalezionoKlienta) {
+        cout << "[BLAD] Nie znaleziono klienta o ID: " << id_klienta << endl;
+        return;
+    }
     cout << "[LOG] Klient (ID: " << id_klienta << ") zlozyl zamowienie nr: " << z.pobierzId() << endl;
     listaZamowien.push_back(z);
 }
@@ -78,7 +89,19 @@ void SystemSklepu::zmienStatusZamowienia(int id_admina, int id_zamowienia, strin
     }
 }
 
-Rezerwacja SystemSklepu::zarezerwujProdukt(int id_klienta, Produkt p, string dataUtworzenia, string czasWygasniecia) {
+Rezerwacja SystemSklepu::zarezerwujProdukt(int id_klienta, Produkt& p, string dataUtworzenia, string czasWygasniecia) {
+    bool znalezionoKlienta = false;
+    for (const auto& klient : listaKlientow) {
+        if (klient.pobierzID() == id_klienta) {
+            znalezionoKlienta = true;
+            break;
+        }
+    }
+    
+    if (!znalezionoKlienta) {
+        cout << "[BLAD] Klient o ID " << id_klienta << " nie istnieje. Rezerwacja odrzucona." << endl;
+        return Rezerwacja();
+    }
     int noweId = aktywneRezerwacje.size() + 1;
     double oplata = p.pobierzCene() * 0.10;
     

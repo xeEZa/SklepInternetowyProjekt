@@ -30,8 +30,8 @@ public:
 
     void ustawId(int id);
     void ustawDateZlozenia(string data);
-    void dodajPozycje(PozycjaZamowienia pozycja);
-    void ustawPlatnosc(Platnosc nowaPlatnosc);
+    void dodajPozycje(PozycjaZamowienia& pozycja);
+    void ustawPlatnosc(Platnosc& nowaPlatnosc);
 };
 
 #endif

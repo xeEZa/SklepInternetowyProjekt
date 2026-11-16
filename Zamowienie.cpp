@@ -66,10 +66,10 @@ void Zamowienie::ustawDateZlozenia(string data) {
     dataZlozenia = data;
 }
 
-void Zamowienie::dodajPozycje(PozycjaZamowienia pozycja) {
+void Zamowienie::dodajPozycje(PozycjaZamowienia& pozycja) {
     pozycje.push_back(pozycja);
 }
 
-void Zamowienie::ustawPlatnosc(Platnosc nowaPlatnosc) {
+void Zamowienie::ustawPlatnosc(Platnosc& nowaPlatnosc) {
     platnosc = nowaPlatnosc;
 }
