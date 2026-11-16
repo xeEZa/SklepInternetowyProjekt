@@ -30,6 +30,7 @@ int main() {
         Produkt(8, "garniEtur", "niE", "Garnitur", 1550.00, true),
         Produkt(9, "białe trampeczki", "Christian Louboutin", "Buty", 2000.00, true),
         Produkt(10, "Bironek & Bilip shoes", "Louis Vuitton", "Buty", 100000.00, true),
+        Produkt(11, "Freestyle Adasia", "Skurzewo Records", "Muzyka", 00.01, true),
     }; 
 
     SystemSklepu sklep(bazaKlientow, poczatkowyAsortyment, vector<Zamowienie>(), vector<Rezerwacja>());
@@ -159,7 +160,7 @@ int main() {
                     Klient& k = sklep.pobierzKlientaPoId(idZalogowanego);
                     vector<Produkt> wKoszyku = k.pobierzKoszyk().pobierzProduktyWKoszyku();
                     if(wKoszyku.empty()) { cout << "[BLAD] Koszyk pusty." << endl; break; }
-
+                    
                     vector<PozycjaZamowienia> pozycje;
                     for(const auto& prod : wKoszyku) pozycje.push_back(PozycjaZamowienia(prod, 1, prod.pobierzCene()));
 
