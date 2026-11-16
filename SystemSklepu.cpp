@@ -60,36 +60,3 @@ void SystemSklepu::zlozZamowienie(int id_klienta, Zamowienie z) {
     listaZamowien.push_back(z);
 }
 
-void SystemSklepu::zmienStatusZamowienia(int id_admina, int id_zamowienia, string status) {
-    bool znaleziono = false;
-    
-    for (auto& zamowienie : listaZamowien) {
-        if (zamowienie.pobierzId() == id_zamowienia) {
-            cout << "[LOG] Administrator (ID: " << id_admina << ") zmienia status zamowienia nr " << id_zamowienia << " na: " << status << endl;
-            zamowienie.aktualizujStatus(status);
-            znaleziono = true;
-            break;
-        }
-    }
-    
-    if (!znaleziono) {
-        cout << "[BLAD] Nie znaleziono zamowienia o ID: " << id_zamowienia << endl;
-    }
-}
-
-Rezerwacja SystemSklepu::zarezerwujProdukt(int id_klienta, Produkt p) {
-    int noweId = aktywneRezerwacje.size() + 1;
-    string dataUtworzenia = "2026-11-16"; 
-    string czasWygasniecia = "2026-11-17";
-    
-    double oplata = p.pobierzCene() * 0.10; 
-    
-    Rezerwacja nowaRezerwacja(noweId, dataUtworzenia, czasWygasniecia, oplata, p);
-    
-    aktywneRezerwacje.push_back(nowaRezerwacja);
-    
-    cout << "[LOG] Klient (ID: " << id_klienta << ") zarezerwowal produkt: " << p.pobierzNazwe() 
-         << ". Oplata rezerwacyjna: " << oplata << " zl." << endl;
-         
-    return nowaRezerwacja;
-}
