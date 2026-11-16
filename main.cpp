@@ -182,10 +182,19 @@ int main() {
                 break;
             }
             case 8: {
+                if (sklep.pobierzListeZamowien().empty()) {
+                    cout << "[BLAD] Brak zamowien w systemie. Najpierw zloz zamowienie." << endl;
+                    break;
+                }
+                
                 cout << "\nPodaj ID zamowienia: "; 
                 int idz; 
                 cin >> idz;
-                cout << "Podaj status: "; string nowyStatus; cin >> ws; getline(cin, nowyStatus);
+                cout << "Podaj nowy status: "; 
+                string nowyStatus; 
+                cin >> ws; 
+                getline(cin, nowyStatus);
+                
                 sklep.zmienStatusZamowienia(ID_ADMINA, idz, nowyStatus);
                 break;
             }
