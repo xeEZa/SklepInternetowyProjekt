@@ -190,7 +190,7 @@ int main() {
                 cout << "Podaj czas wygasniecia rezerwacji (YYYY-MM-DD): ";
                 cin >> czasWygasniecia;
                 if(!kat.empty()) {
-                    sklep.zarezerwujProdukt(idZalogowanego, kat.back(), "2026-11-16", "2026-11-17");
+                    sklep.zarezerwujProdukt(idZalogowanego, kat.back(), dataUtworzenia, czasWygasniecia);
                 }
                 break;
             }
