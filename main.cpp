@@ -191,12 +191,6 @@ int main() {
             }
             case 9: {
                 vector<Produkt> kat = sklep.pobierzKatalogProduktow();
-                string dataUtworzenia;
-                string czasWygasniecia;
-                cout << "Podaj date utworzenia rezerwacji (YYYY-MM-DD): ";
-                cin >> dataUtworzenia;
-                cout << "Podaj czas wygasniecia rezerwacji (YYYY-MM-DD): ";
-                cin >> czasWygasniecia;
                 if(kat.empty()) { 
                     cout << "Katalog jest pusty. Nie mozna nic zarezerwowac." << endl; 
                     break; 
@@ -210,7 +204,12 @@ int main() {
                 cout << "Podaj ID produktu, ktory chcesz zarezerwowac: ";
                 int idWybrane; 
                 cin >> idWybrane;
-                
+                string dataUtworzenia;
+                string czasWygasniecia;
+                cout << "Podaj date utworzenia rezerwacji (YYYY-MM-DD): ";
+                cin >> dataUtworzenia;
+                cout << "Podaj czas wygasniecia rezerwacji (YYYY-MM-DD): ";
+                cin >> czasWygasniecia;
                 bool znaleziono = false;
                 for (const auto& p : kat) {
                     if (p.pobierzId() == idWybrane) {
