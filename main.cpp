@@ -28,6 +28,8 @@ int main() {
         Produkt(6, "Czarna suknya z cekinami", "NYA>_<", "Suknya", 750.00, true),
         Produkt(7, "Krutkie skarpetki", "Bilip", "Skarpetki", 69.00, true),
         Produkt(8, "garniEtur", "niE", "Garnitur", 1550.00, true),
+        Produkt(9, "białe trampeczki", "Christian Louboutin", "Buty", 2000.00, true),
+        Produkt(10, "Bironek & Bilip shoes", "Louis Vuitton", "Buty", 100000.00, true),
     }; 
 
     SystemSklepu sklep(bazaKlientow, poczatkowyAsortyment, vector<Zamowienie>(), vector<Rezerwacja>());
