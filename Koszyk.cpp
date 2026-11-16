@@ -5,6 +5,7 @@ using namespace std;
 
 void Koszyk::dodajDoKoszyka(const Produkt& p) {
     produktyWKoszyku.push_back(p);
+    wartoscKoszyka += p.pobierzCene();
     cout << "Produkt zostal dodany do koszyka." << endl;
 }
 
